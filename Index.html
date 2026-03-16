@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chatbot Catastro Multipropósito</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#343541;
+color:white;
+display:flex;
+height:100vh;
+}
+
+/* Barra lateral */
+
+.sidebar{
+width:260px;
+background:#202123;
+padding:20px;
+box-sizing:border-box;
+}
+
+.sidebar h2{
+margin-top:0;
+font-size:20px;
+}
+
+.sidebar p{
+color:#aaa;
+font-size:14px;
+}
+
+/* Zona principal */
+
+.main{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+/* Encabezado */
+
+.header{
+background:#444654;
+padding:15px;
+text-align:center;
+font-size:18px;
+}
+
+/* Área del chat */
+
+.chat-area{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+}
+
+/* Contenedor del chat */
+
+.chat-container{
+width:100%;
+max-width:800px;
+background:#444654;
+border-radius:10px;
+padding:30px;
+box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+}
+
+.chat-title{
+text-align:center;
+margin-bottom:20px;
+font-size:22px;
+}
+
+.chat-description{
+text-align:center;
+color:#ccc;
+margin-bottom:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Barra lateral -->
+
+<div class="sidebar">
+
+<h2>CatastroBot</h2>
+
+<p>Asistente sobre:</p>
+
+<ul>
+<li>Catastro multipropósito</li>
+<li>Avalúo catastral</li>
+<li>Predios</li>
+<li>Gestión del suelo</li>
+</ul>
+
+</div>
+
+<!-- Zona principal -->
+
+<div class="main">
+
+<div class="header">
+Chatbot de Catastro Multipropósito
+</div>
+
+<div class="chat-area">
+
+<div class="chat-container">
+
+<div class="chat-title">
+Asistente Virtual
+</div>
+
+<div class="chat-description">
+Haz preguntas sobre catastro multipropósito en Colombia
+</div>
+
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '69b81b6035efdab2c3311650' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+          render: {
+            mode: 'embedded',
+            target: document.getElementById(...)
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+<div id="chatbot">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
