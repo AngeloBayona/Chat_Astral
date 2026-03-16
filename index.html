@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chatbot Catastro Multipropósito</title>
+<title>Chat Astral</title>
 
 <style>
 
@@ -18,26 +18,34 @@ display:flex;
 height:100vh;
 }
 
-/* Barra lateral */
+/* SIDEBAR */
 
 .sidebar{
 width:260px;
 background:#202123;
 padding:20px;
 box-sizing:border-box;
+display:flex;
+flex-direction:column;
 }
 
-.sidebar h2{
-margin-top:0;
+.logo{
 font-size:20px;
+font-weight:bold;
+margin-bottom:30px;
 }
 
-.sidebar p{
-color:#aaa;
+.menu{
+color:#cfcfcf;
 font-size:14px;
+line-height:1.8;
 }
 
-/* Zona principal */
+.menu p{
+margin:8px 0;
+}
+
+/* AREA PRINCIPAL */
 
 .main{
 flex:1;
@@ -45,16 +53,17 @@ display:flex;
 flex-direction:column;
 }
 
-/* Encabezado */
+/* HEADER */
 
 .header{
 background:#444654;
 padding:15px;
 text-align:center;
 font-size:18px;
+font-weight:bold;
 }
 
-/* Área del chat */
+/* ZONA DEL CHAT */
 
 .chat-area{
 flex:1;
@@ -64,26 +73,24 @@ align-items:center;
 padding:40px;
 }
 
-/* Contenedor del chat */
-
 .chat-container{
 width:100%;
 max-width:800px;
 background:#444654;
 border-radius:10px;
 padding:30px;
-box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+box-shadow:0 0 20px rgba(0,0,0,0.3);
 }
 
-.chat-title{
+.title{
 text-align:center;
-margin-bottom:20px;
-font-size:22px;
+font-size:24px;
+margin-bottom:10px;
 }
 
-.chat-description{
+.subtitle{
 text-align:center;
-color:#ccc;
+color:#cfcfcf;
 margin-bottom:30px;
 }
 
@@ -93,24 +100,25 @@ margin-bottom:30px;
 
 <body>
 
-<!-- Barra lateral -->
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
-<h2>CatastroBot</h2>
+<div class="logo">
+Chat Astral
+</div>
 
-<p>Asistente sobre:</p>
-
-<ul>
-<li>Catastro multipropósito</li>
-<li>Avalúo catastral</li>
-<li>Predios</li>
-<li>Gestión del suelo</li>
-</ul>
+<div class="menu">
+<p>🤖 Asistente IA</p>
+<p>📊 Catastro multipropósito</p>
+<p>📍 Predios</p>
+<p>📈 Avalúo catastral</p>
+<p>🗺️ Gestión territorial</p>
+</div>
 
 </div>
 
-<!-- Zona principal -->
+<!-- AREA PRINCIPAL -->
 
 <div class="main">
 
@@ -122,13 +130,17 @@ Chatbot de Catastro Multipropósito
 
 <div class="chat-container">
 
-<div class="chat-title">
-Asistente Virtual
+<div class="title">
+Bienvenido
 </div>
 
-<div class="chat-description">
+<div class="subtitle">
 Haz preguntas sobre catastro multipropósito en Colombia
 </div>
+
+<!-- AQUI PEGAS TU CHATBOT -->
+
+<div id="chatbot">
 
 <script type="text/javascript">
   (function(d, t) {
@@ -150,8 +162,6 @@ Haz preguntas sobre catastro multipropósito en Colombia
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
-
-<div id="chatbot">
 
 </div>
 
