@@ -9,18 +9,17 @@
 
 <style>
 
-/* FONDO */
+/* 🔥 FONDO */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-color:white;
 display:flex;
 height:100vh;
 overflow:hidden;
 }
 
-/* IMAGEN FONDO (MENOS BLUR) */
+/* IMAGEN FONDO */
 
 body::before{
 content:"";
@@ -30,12 +29,12 @@ left:0;
 width:100%;
 height:100%;
 background:url("fondo.jpg") no-repeat center center/cover;
-filter:blur(5px); /* MENOS DESENFOQUE */
+filter:blur(5px);
 transform: scale(1.05);
 z-index:-2;
 }
 
-/* CAPA OSCURA */
+/* CAPA OSCURA SUAVE */
 
 body::after{
 content:"";
@@ -44,32 +43,29 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.3);
 z-index:-1;
 }
 
-/* SIDEBAR */
+/* 🔥 SIDEBAR BLANCO */
 
 .sidebar{
 width:260px;
-height:100vh; /* SIEMPRE TODA LA ALTURA */
-background:rgba(255,255,255,0.05); /* TRANSPARENTE */
-backdrop-filter: blur(15px); /* MÁS DESENFOQUE QUE EL FONDO */
--webkit-backdrop-filter: blur(15px);
+height:100vh;
+background:#ffffff;
+color:#1e293b;
 padding:20px;
 box-sizing:border-box;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-overflow:hidden;
-border-right:1px solid rgba(255,255,255,0.1);
+border-right:1px solid #ddd;
 }
 
 /* CONTENIDO SUPERIOR */
 
 .sidebar-top{
 text-align:center;
-overflow-y:auto;
 }
 
 /* LOGO */
@@ -78,6 +74,7 @@ overflow-y:auto;
 font-size:22px;
 font-weight:bold;
 margin-bottom:20px;
+color:#1e293b;
 }
 
 /* IMAGEN UNIVERSIDAD */
@@ -93,22 +90,21 @@ border-radius:10px;
 /* TEXTO */
 
 .menu{
-color:#ddd;
 font-size:14px;
 line-height:1.6;
 text-align:justify;
+color:#334155;
 }
 
 /* FOOTER */
 
 .sidebar-footer{
 font-size:12px;
-color:#aaa;
 text-align:center;
-margin-top:10px;
+color:#64748b;
 }
 
-/* MAIN */
+/* 🔥 MAIN */
 
 .main{
 flex:1;
@@ -117,14 +113,15 @@ flex-direction:column;
 height:100vh;
 }
 
-/* HEADER */
+/* 🔥 HEADER BLANCO */
 
 .header{
-background:rgba(68,70,84,0.7);
+background:#ffffff;
+color:#1e293b;
 padding:15px;
 text-align:center;
 font-size:18px;
-backdrop-filter:blur(8px);
+border-bottom:1px solid #ddd;
 }
 
 /* CHAT AREA */
@@ -135,7 +132,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
-overflow:auto; /* SOLUCION SCROLL */
+overflow:auto;
 }
 
 /* CHAT CONTAINER */
@@ -144,21 +141,20 @@ overflow:auto; /* SOLUCION SCROLL */
 width:100%;
 max-width:900px;
 min-height:600px;
-background:rgba(68,70,84,0.75);
+background:rgba(255,255,255,0.9);
 border-radius:15px;
 overflow:hidden;
-box-shadow:0 0 30px rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(0,0,0,0.3);
 }
 
 /* CHATBOT */
 
 #chatbot-container{
 width:100%;
-height:700px; /* CONTROLA EL TAMAÑO DEL CHAT */
+height:700px;
 }
 
-/*ELIMINAR BURBUJA */
+/* 🔥 ELIMINAR BURBUJA */
 
 .vfrc-launcher,
 .vfrc-widget--launcher,
@@ -203,7 +199,7 @@ Ingeniería Catastral y Geodesia</p>
 
 </div>
 
-<!-- CONTENIDO -->
+<!-- 🔥 CONTENIDO -->
 <div class="main">
 
 <div class="header">
@@ -251,10 +247,6 @@ s.parentNode.insertBefore(v, s);
 
 })(document, 'script');
 </script>
-
-</body>
-
-</html>
 
 </body>
 
