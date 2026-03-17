@@ -9,7 +9,7 @@
 
 <style>
 
-/*  BASE */
+/* BASE */
 
 body{
 margin:0;
@@ -19,7 +19,7 @@ height:100vh;
 overflow:hidden;
 }
 
-/* 🔥 FONDO */
+/* FONDO */
 
 body::before{
 content:"";
@@ -45,14 +45,13 @@ background:rgba(255,255,255,0.2);
 z-index:-1;
 }
 
-/* 🔥 SIDEBAR GLASS */
+/* SIDEBAR */
 
 .sidebar{
 width:260px;
 height:100vh;
 background:rgba(255,255,255,0.6);
 backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
 color:#1e293b;
 padding:20px;
 box-sizing:border-box;
@@ -71,16 +70,30 @@ text-align:center;
 .logo{
 font-size:22px;
 font-weight:bold;
-margin-bottom:20px;
+margin-bottom:10px;
 }
+
+/* 🔥 LINEA PERSONALIZADA */
+
+.linea{
+width:70%;
+height:2px;
+background:#1e3a8a; /* azul oscuro */
+margin:10px auto 20px auto;
+border-radius:5px;
+}
+
+/* LOGO UNIVERSIDAD */
 
 .university-logo{
 width:100%;
 max-width:120px;
-margin:10px auto;
+margin:15px auto;
 display:block;
 border-radius:10px;
 }
+
+/* TEXTO */
 
 .menu{
 font-size:14px;
@@ -88,7 +101,7 @@ line-height:1.6;
 text-align:justify;
 }
 
-/* 🔥 BOTÓN NUEVO CHAT */
+/* BOTÓN */
 
 .new-chat-btn{
 margin-top:20px;
@@ -114,24 +127,12 @@ text-align:center;
 color:#334155;
 }
 
-/* 🔥 MAIN */
+/* MAIN */
 
 .main{
 flex:1;
 display:flex;
 flex-direction:column;
-}
-
-/* HEADER */
-
-.header{
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(8px);
-color:#1e293b;
-padding:15px;
-text-align:center;
-font-size:18px;
-border-bottom:1px solid rgba(255,255,255,0.3);
 }
 
 /* CHAT AREA */
@@ -163,7 +164,7 @@ width:100%;
 height:700px;
 }
 
-/* 🔥 OCULTAR BURBUJA */
+/* OCULTAR BURBUJA */
 
 .vfrc-launcher,
 .vfrc-widget--launcher,
@@ -177,28 +178,33 @@ display:none !important;
 
 <body>
 
-<!-- 🔥 SIDEBAR -->
+<!-- SIDEBAR -->
 <div class="sidebar">
 
 <div class="sidebar-top">
 
 <div class="logo">
-Chat Astral
+CHAT ASTRAL
 </div>
 
-<img src="logo_universidad.png" class="university-logo">
+<div class="linea"></div>
 
 <div class="menu">
-<p><strong>Asistente IA</strong></p>
+<p><strong>ASISTENTE IA</strong></p>
+
 <p>
 Esta página administra información sobre el catastro multipropósito como solución al proyecto de inteligencia artificial aplicada al territorio.
 </p>
 
-<p><strong>Carrera:</strong><br>
+<p><strong>CARRERA:</strong><br>
 INGENIERÍA CATASTRAL Y GEODESIA</p>
 
+<div class="linea"></div>
+
+<img src="logo_universidad.png" class="university-logo">
+
 <button class="new-chat-btn" onclick="resetChat()">
-+ NUEVO CHAT
+NUEVO CHAT
 </button>
 
 </div>
@@ -212,9 +218,8 @@ INGENIERÍA CATASTRAL Y GEODESIA</p>
 
 </div>
 
-<!-- 🔥 CONTENIDO -->
+<!-- CONTENIDO -->
 <div class="main">
-
 
 <div class="chat-area">
 
@@ -226,7 +231,7 @@ INGENIERÍA CATASTRAL Y GEODESIA</p>
 
 </div>
 
-<!-- 🔥 VOICEFLOW -->
+<!-- VOICEFLOW -->
 <script type="text/javascript">
 (function(d, t) {
 
@@ -257,7 +262,7 @@ s.parentNode.insertBefore(v, s);
 
 })(document, 'script');
 
-/* 🔥 FUNCIÓN NUEVO CHAT */
+/* NUEVO CHAT */
 
 function resetChat(){
 document.getElementById("chatbot-container").innerHTML = "";
