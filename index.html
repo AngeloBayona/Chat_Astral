@@ -9,7 +9,7 @@
 
 <style>
 
-/*FONDO CON IMAGEN DESENFOCADA */
+/* FONDO */
 
 body{
 margin:0;
@@ -20,6 +20,8 @@ height:100vh;
 overflow:hidden;
 }
 
+/* IMAGEN FONDO (MENOS BLUR) */
+
 body::before{
 content:"";
 position:fixed;
@@ -27,15 +29,13 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-
-/* CAMBIA ESTA IMAGEN */
 background:url("fondo.jpg") no-repeat center center/cover;
-
-filter:blur(10px);
-z-index:-1;
+filter:blur(5px); /* MENOS DESENFOQUE */
+transform: scale(1.05);
+z-index:-2;
 }
 
-/*CAPA OSCURA ENCIMA */
+/* CAPA OSCURA */
 
 body::after{
 content:"";
@@ -44,7 +44,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.5);
 z-index:-1;
 }
 
@@ -52,19 +52,27 @@ z-index:-1;
 
 .sidebar{
 width:260px;
-background:rgba(32,33,35,0.95);
+height:100vh; /* SIEMPRE TODA LA ALTURA */
+background:rgba(255,255,255,0.05); /* TRANSPARENTE */
+backdrop-filter: blur(15px); /* MÁS DESENFOQUE QUE EL FONDO */
+-webkit-backdrop-filter: blur(15px);
 padding:20px;
 box-sizing:border-box;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
+overflow:hidden;
+border-right:1px solid rgba(255,255,255,0.1);
 }
 
-/* PARTE SUPERIOR SIDEBAR */
+/* CONTENIDO SUPERIOR */
 
 .sidebar-top{
 text-align:center;
+overflow-y:auto;
 }
+
+/* LOGO */
 
 .logo{
 font-size:22px;
@@ -91,62 +99,66 @@ line-height:1.6;
 text-align:justify;
 }
 
-/* FOOTER SIDEBAR */
+/* FOOTER */
 
 .sidebar-footer{
 font-size:12px;
 color:#aaa;
 text-align:center;
-margin-top:20px;
+margin-top:10px;
 }
 
-/* AREA PRINCIPAL */
+/* MAIN */
 
 .main{
 flex:1;
 display:flex;
 flex-direction:column;
+height:100vh;
 }
 
 /* HEADER */
 
 .header{
-background:rgba(68,70,84,0.9);
+background:rgba(68,70,84,0.7);
 padding:15px;
 text-align:center;
 font-size:18px;
-backdrop-filter:blur(5px);
+backdrop-filter:blur(8px);
 }
 
-/* ZONA CHAT */
+/* CHAT AREA */
 
 .chat-area{
 flex:1;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:40px;
+padding:20px;
+overflow:auto; /* SOLUCION SCROLL */
 }
 
-/* CONTENEDOR CHAT */
+/* CHAT CONTAINER */
 
 .chat-container{
 width:100%;
-max-width:850px;
-height:650px;
-background:rgba(68,70,84,0.85);
+max-width:900px;
+min-height:600px;
+background:rgba(68,70,84,0.75);
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 0 30px rgba(0,0,0,0.5);
 backdrop-filter:blur(10px);
 }
 
+/* CHATBOT */
+
 #chatbot-container{
 width:100%;
-height:100%;
+height:700px; /* CONTROLA EL TAMAÑO DEL CHAT */
 }
 
-/* ELIMINAR BURBUJA */
+/*ELIMINAR BURBUJA */
 
 .vfrc-launcher,
 .vfrc-widget--launcher,
@@ -169,7 +181,6 @@ display: none !important;
 Chat Astral
 </div>
 
-<!-- LOGO UNIVERSIDAD -->
 <img src="logo_universidad.png" class="university-logo">
 
 <div class="menu">
@@ -185,7 +196,6 @@ Ingeniería Catastral y Geodesia</p>
 
 </div>
 
-<!-- FOOTER -->
 <div class="sidebar-footer">
 <p>Angelo Michel Hernández Bayona</p>
 <p>20201025062</p>
@@ -193,7 +203,7 @@ Ingeniería Catastral y Geodesia</p>
 
 </div>
 
-<!-- CONTENIDO PRINCIPAL -->
+<!-- CONTENIDO -->
 <div class="main">
 
 <div class="header">
@@ -210,7 +220,7 @@ Chatbot de Catastro Multipropósito
 
 </div>
 
-<!-- VOICEFLOW -->
+<!-- 🔥 VOICEFLOW -->
 <script type="text/javascript">
 (function(d, t) {
 
@@ -241,6 +251,10 @@ s.parentNode.insertBefore(v, s);
 
 })(document, 'script');
 </script>
+
+</body>
+
+</html>
 
 </body>
 
