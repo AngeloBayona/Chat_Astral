@@ -81,6 +81,14 @@ width:100%;
 height:100%;
 }
 
+/* 🔥 ELIMINAR BURBUJA DE VOICEFLOW */
+
+.vfrc-launcher,
+.vfrc-widget--launcher,
+div[style*="position: fixed"][style*="bottom"] {
+display: none !important;
+}
+
 </style>
 
 </head>
@@ -94,9 +102,8 @@ Chat Astral
 </div>
 
 <div class="menu">
-<p> Asistente IA</p>
-<p>Esta pagina se encarga de administrar información sobre el catastro multipropósito como solución al proyecto #3 para la materia de inteligencia artificial aplicada al territorio</p>
-
+<p>🤖 Asistente IA</p>
+<p>Esta página administra información sobre el catastro multipropósito como solución al proyecto #3 de inteligencia artificial aplicada al territorio</p>
 </div>
 
 </div>
@@ -110,9 +117,7 @@ Chatbot de Catastro Multipropósito
 <div class="chat-area">
 
 <div class="chat-container">
-
 <div id="chatbot-container"></div>
-
 </div>
 
 </div>
@@ -134,13 +139,9 @@ url: 'https://general-runtime.voiceflow.com',
 
 versionID: 'production',
 
-assistant: {
-  container: document.getElementById("chatbot-container")
-},
-
-
-launcher: {
-  hide: true
+render: {
+mode: 'embedded',
+target: document.getElementById("chatbot-container")
 }
 
 });
