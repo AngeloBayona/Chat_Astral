@@ -73,17 +73,26 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
-/* 🔥 LINEA PERSONALIZADA */
+/* 🔥 LINEA NEGRA */
 
 .linea{
 width:70%;
 height:2px;
-background:#1e3a8a; /* azul oscuro */
+background:#000;
 margin:10px auto 20px auto;
 border-radius:5px;
 }
 
-/* LOGO UNIVERSIDAD */
+/* 🔥 CARD TEXTO */
+
+.info-box{
+background:rgba(200,200,200,0.4);
+padding:10px;
+border-radius:10px;
+margin:10px 0;
+}
+
+/* LOGO */
 
 .university-logo{
 width:100%;
@@ -101,17 +110,19 @@ line-height:1.6;
 text-align:justify;
 }
 
-/* BOTÓN */
+/* 🔥 BOTÓN GRANDE */
 
 .new-chat-btn{
-margin-top:20px;
-padding:10px;
+width:90%;
+margin:0 auto 20px auto;
+display:block;
+padding:12px;
 background:#2563eb;
 color:white;
 border:none;
-border-radius:8px;
+border-radius:10px;
 cursor:pointer;
-font-size:14px;
+font-size:15px;
 transition:0.3s;
 }
 
@@ -190,11 +201,14 @@ CHAT ASTRAL
 <div class="linea"></div>
 
 <div class="menu">
+
 <p><strong>ASISTENTE IA</strong></p>
 
+<div class="info-box">
 <p>
 Esta página administra información sobre el catastro multipropósito como solución al proyecto de inteligencia artificial aplicada al territorio.
 </p>
+</div>
 
 <p><strong>CARRERA:</strong><br>
 INGENIERÍA CATASTRAL Y GEODESIA</p>
@@ -203,17 +217,22 @@ INGENIERÍA CATASTRAL Y GEODESIA</p>
 
 <img src="logo_universidad.png" class="university-logo">
 
+</div>
+
+</div>
+
+<!-- 🔥 PARTE INFERIOR -->
+<div>
+
 <button class="new-chat-btn" onclick="resetChat()">
 NUEVO CHAT
 </button>
 
-</div>
-
-</div>
-
 <div class="sidebar-footer">
 <p>ANGELO MICHEL HERNANDEZ BAYONA</p>
 <p>20201025062</p>
+</div>
+
 </div>
 
 </div>
