@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chat Astral</title>
+<title>CHAT ASTRAL</title>
 
 <style>
 
-/* 🔥 FONDO */
+/*  BASE */
 
 body{
 margin:0;
@@ -19,7 +19,7 @@ height:100vh;
 overflow:hidden;
 }
 
-/* IMAGEN FONDO */
+/* 🔥 FONDO */
 
 body::before{
 content:"";
@@ -29,12 +29,10 @@ left:0;
 width:100%;
 height:100%;
 background:url("fondo.jpg") no-repeat center center/cover;
-filter:blur(5px);
+filter:blur(6px);
 transform: scale(1.05);
 z-index:-2;
 }
-
-/* CAPA OSCURA SUAVE */
 
 body::after{
 content:"";
@@ -43,41 +41,38 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.3);
+background:rgba(255,255,255,0.2);
 z-index:-1;
 }
 
-/* 🔥 SIDEBAR BLANCO */
+/* 🔥 SIDEBAR GLASS */
 
 .sidebar{
 width:260px;
 height:100vh;
-background:#ffffff;
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
 color:#1e293b;
 padding:20px;
 box-sizing:border-box;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-border-right:1px solid #ddd;
+border-right:1px solid rgba(255,255,255,0.3);
 }
 
-/* CONTENIDO SUPERIOR */
+/* CONTENIDO */
 
 .sidebar-top{
 text-align:center;
 }
 
-/* LOGO */
-
 .logo{
 font-size:22px;
 font-weight:bold;
 margin-bottom:20px;
-color:#1e293b;
 }
-
-/* IMAGEN UNIVERSIDAD */
 
 .university-logo{
 width:100%;
@@ -87,13 +82,28 @@ display:block;
 border-radius:10px;
 }
 
-/* TEXTO */
-
 .menu{
 font-size:14px;
 line-height:1.6;
 text-align:justify;
-color:#334155;
+}
+
+/* 🔥 BOTÓN NUEVO CHAT */
+
+.new-chat-btn{
+margin-top:20px;
+padding:10px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+.new-chat-btn:hover{
+background:#1d4ed8;
 }
 
 /* FOOTER */
@@ -101,7 +111,7 @@ color:#334155;
 .sidebar-footer{
 font-size:12px;
 text-align:center;
-color:#64748b;
+color:#334155;
 }
 
 /* 🔥 MAIN */
@@ -110,18 +120,18 @@ color:#64748b;
 flex:1;
 display:flex;
 flex-direction:column;
-height:100vh;
 }
 
-/* 🔥 HEADER BLANCO */
+/* HEADER */
 
 .header{
-background:#ffffff;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(8px);
 color:#1e293b;
 padding:15px;
 text-align:center;
 font-size:18px;
-border-bottom:1px solid #ddd;
+border-bottom:1px solid rgba(255,255,255,0.3);
 }
 
 /* CHAT AREA */
@@ -132,16 +142,15 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
-overflow:auto;
 }
 
-/* CHAT CONTAINER */
+/* CHAT BOX */
 
 .chat-container{
 width:100%;
 max-width:900px;
 min-height:600px;
-background:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.85);
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 0 30px rgba(0,0,0,0.3);
@@ -154,12 +163,12 @@ width:100%;
 height:700px;
 }
 
-/* 🔥 ELIMINAR BURBUJA */
+/* 🔥 OCULTAR BURBUJA */
 
 .vfrc-launcher,
 .vfrc-widget--launcher,
 div[style*="position: fixed"][style*="bottom"] {
-display: none !important;
+display:none !important;
 }
 
 </style>
@@ -186,14 +195,18 @@ Esta página administra información sobre el catastro multipropósito como solu
 </p>
 
 <p><strong>Carrera:</strong><br>
-Ingeniería Catastral y Geodesia</p>
+INGENIERÍA CATASTRAL Y GEODESIA</p>
+
+<button class="new-chat-btn" onclick="resetChat()">
++ NUEVO CHAT
+</button>
 
 </div>
 
 </div>
 
 <div class="sidebar-footer">
-<p>Angelo Michel Hernández Bayona</p>
+<p>ANGELO MICHEL HERNANDEZ BAYONA</p>
 <p>20201025062</p>
 </div>
 
@@ -202,9 +215,6 @@ Ingeniería Catastral y Geodesia</p>
 <!-- 🔥 CONTENIDO -->
 <div class="main">
 
-<div class="header">
-Chatbot de Catastro Multipropósito
-</div>
 
 <div class="chat-area">
 
@@ -246,6 +256,23 @@ v.type = "text/javascript";
 s.parentNode.insertBefore(v, s);
 
 })(document, 'script');
+
+/* 🔥 FUNCIÓN NUEVO CHAT */
+
+function resetChat(){
+document.getElementById("chatbot-container").innerHTML = "";
+
+window.voiceflow.chat.load({
+verify: { projectID: '69b81b6035efdab2c3311650' },
+url: 'https://general-runtime.voiceflow.com',
+versionID: 'production',
+render: {
+mode: 'embedded',
+target: document.getElementById("chatbot-container")
+}
+});
+}
+
 </script>
 
 </body>
