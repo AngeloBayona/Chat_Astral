@@ -9,7 +9,7 @@
 
 <style>
 
-/* 🔥 RESET PRO */
+/* 🔥 RESET */
 *{
 box-sizing:border-box;
 margin:0;
@@ -35,7 +35,7 @@ left:0;
 width:100%;
 height:100%;
 background:url("fondo1.jpg") no-repeat center center/cover;
-filter:blur(2px);
+filter:blur(3px);
 transform: scale(1.05);
 z-index:-2;
 }
@@ -47,33 +47,33 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(255,255,255,0.02); /* 👈 equilibrado */
+background:rgba(255,255,255,0.05);
 z-index:-1;
 }
 
-/* SIDEBAR RESPONSIVA */
+/* SIDEBAR */
 
 .sidebar{
-width:clamp(300px, 22vw, 420px); /* 🔥 CLAVE */
+width:clamp(320px, 24vw, 420px);
 height:100vh;
-background:rgba(255,255,255,0.35);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.45);
+backdrop-filter:blur(12px);
 color:#1e293b;
 padding:25px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-border-right:1px solid rgba(255,255,255,0.3);
+border-right:1px solid rgba(0,0,0,0.2);
 }
 
-/* CONTENIDO */
+/* CONTENIDO SIDEBAR */
 
 .sidebar-top{
 text-align:center;
 }
 
 .logo{
-font-size:24px;
+font-size:26px;
 font-weight:bold;
 margin-bottom:10px;
 }
@@ -87,12 +87,13 @@ border-radius:5px;
 }
 
 .info-box{
-background:rgba(180,180,180,0.5);
-padding:15px;
-border-radius:12px;
+background:rgba(160,160,160,0.45);
+padding:18px;
+border-radius:15px;
 margin:10px 0;
 font-size:16px;
-line-height:1.8;
+line-height:1.7;
+text-align:left;
 }
 
 /* LOGO */
@@ -105,20 +106,11 @@ display:block;
 border-radius:10px;
 }
 
-/* TEXTO */
-
-.menu{
-font-size:15px;
-line-height:1.7;
-text-align:left;
-}
-
 /* BOTÓN */
 
 .new-chat-btn{
 width:100%;
-margin-top:10px;
-padding:14px;
+padding:16px;
 background:#2563eb;
 color:white;
 border:none;
@@ -126,6 +118,7 @@ border-radius:12px;
 cursor:pointer;
 font-size:16px;
 transition:0.3s;
+margin-top:15px;
 }
 
 .new-chat-btn:hover{
@@ -146,7 +139,7 @@ margin-top:10px;
 .main{
 flex:1;
 display:flex;
-justify-content:center; /* 🔥 centra todo */
+justify-content:center;
 align-items:center;
 padding:20px;
 }
@@ -154,20 +147,21 @@ padding:20px;
 /* CHAT */
 
 .chat-container{
-width:90%; /* 🔥 adaptable */
-max-width:1000px; /* 🔥 límite */
-min-height:600px;
-background:rgba(255,255,255,0.85);
-border-radius:15px;
+width:clamp(650px, 70%, 1100px);
+height:85vh;
+background:rgba(255,255,255,0.9);
+border-radius:18px;
 overflow:hidden;
-box-shadow:0 0 30px rgba(0,0,0,0.3);
+box-shadow:0 0 40px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
 }
 
 /* CHATBOT */
 
 #chatbot-container{
 width:100%;
-height:700px;
+height:100%;
 }
 
 /* OCULTAR BURBUJA */
@@ -195,10 +189,6 @@ CHAT ASTRAL
 
 <div class="linea"></div>
 
-<div class="menu">
-
-<p><strong>¡BIENVENIDO!</strong></p>
-
 <div class="info-box">
 
 <p>
@@ -206,7 +196,7 @@ Esta plataforma es la solución al Proyecto 3 de la materia Inteligencia Artific
 </p>
 
 <p>
-Aquí encontrarás un asistente inteligente diseñado para explicarte todo sobre el Catastro Multipropósito.
+Aquí encontrarás un asistente inteligente diseñado para explicarte todo sobre el Catastro Multipropósito de forma sencilla y sin enredos técnicos.
 </p>
 
 <p><strong>¿Cómo funciona?</strong></p>
@@ -220,8 +210,6 @@ Para empezar, solo escribe tu duda en el chat de la derecha y presiona enviar.
 <div class="linea"></div>
 
 <img src="logo_universidad.png" class="university-logo">
-
-</div>
 
 </div>
 
@@ -240,7 +228,7 @@ NUEVO CHAT
 
 </div>
 
-<!-- CONTENIDO -->
+<!-- MAIN -->
 <div class="main">
 
 <div class="chat-container">
@@ -258,18 +246,13 @@ var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
 v.onload = function() {
 
 window.voiceflow.chat.load({
-
 verify: { projectID: '69b81b6035efdab2c3311650' },
-
 url: 'https://general-runtime.voiceflow.com',
-
 versionID: 'production',
-
 render: {
 mode: 'embedded',
 target: document.getElementById("chatbot-container")
 }
-
 });
 
 }
@@ -283,7 +266,8 @@ s.parentNode.insertBefore(v, s);
 /* NUEVO CHAT */
 
 function resetChat(){
-document.getElementById("chatbot-container").innerHTML = "";
+const container = document.getElementById("chatbot-container");
+container.innerHTML = "";
 
 window.voiceflow.chat.load({
 verify: { projectID: '69b81b6035efdab2c3311650' },
@@ -291,7 +275,7 @@ url: 'https://general-runtime.voiceflow.com',
 versionID: 'production',
 render: {
 mode: 'embedded',
-target: document.getElementById("chatbot-container")
+target: container
 }
 });
 }
@@ -299,5 +283,4 @@ target: document.getElementById("chatbot-container")
 </script>
 
 </body>
-
 </html>
